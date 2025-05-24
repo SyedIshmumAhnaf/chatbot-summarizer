@@ -17,10 +17,20 @@ def parse_chat(file_path):
     
     return user_msgs, ai_msgs
 
+#Function to keep track of number of messages for user and AI
+def count_messages(user_msgs, ai_msgs):
+    user_count = len(user_msgs)
+    ai_count = len(ai_msgs)
+    total_count = user_count + ai_count
+    print(f"Total Messages: {total_count}")
+    print(f"User Messages: {user_count}")
+    print(f"AI Messages: {ai_count}")
+
 #Tester function
 if __name__ == "__main__":
     user, ai = parse_chat("chat_log.txt")
-    print("User Messages:")
-    print(user)
-    print("AI Messages:")
-    print(ai)
+    #print("User Messages:")
+    #print(user)
+    #print("AI Messages:")
+    #print(ai)
+    count_messages(user, ai)
