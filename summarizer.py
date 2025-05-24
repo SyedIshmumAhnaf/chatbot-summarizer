@@ -9,10 +9,10 @@ def parse_chat(file_path):
     #file opening and separating user and AI texts
     with open(file_path, 'r', encoding='utf-8') as f:
         for line in f:
-            line = line.strip()
-            if line.startswith("User:"):
+            line1 = line.strip().lower() #misses text if case is different
+            if line1.startswith("user:"):
                 user_msgs.append(line[len("User:"):].strip())
-            elif line.startswith("AI:"):
+            elif line1.startswith("ai:"):
                 ai_msgs.append(line[len("AI:"):].strip())
     
     return user_msgs, ai_msgs

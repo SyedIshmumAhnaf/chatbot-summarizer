@@ -1,4 +1,4 @@
-User: What is Python?
+user: What is Python?
 AI: Python is a high-level, interpreted programming language.
 User: What can I use Python for?
 AI: You can use Python for web development, data analysis, AI, and more.
