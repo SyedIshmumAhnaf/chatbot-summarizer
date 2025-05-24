@@ -1,0 +1,10 @@
+User: What is Python?
+AI: Python is a high-level, interpreted programming language.
+User: What can I use Python for?
+AI: You can use Python for web development, data analysis, AI, and more.
+User: Is Python good for AI?
+AI: Yes, Python is widely used in AI due to its libraries and community support.
+User: What are some popular Python libraries?
+AI: Some popular Python libraries are NumPy, pandas, TensorFlow, and scikit-learn.
+User: Thank you!
+AI: You're welcome!
