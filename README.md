@@ -57,6 +57,33 @@ If entire folder:
 python summarizer.py logs/
 ```
 
+## Sample Output
+```bash
+File: chat_three.txt
+Summary:
+- The conversation had 10 exchanges.
+- The user asked mainly about foods, healthy.
+- Most common keywords: foods, healthy, eating, focus, limit.
+- TF-IDF keywords: foods, limit, helpful, healthy, focus.
+- User messages: 5 | AI messages: 5
+
+File: chat_one.txt
+Summary:
+- The conversation had 10 exchanges.
+- The user asked mainly about git, changes.
+- Most common keywords: git, changes, use, common, command.
+- TF-IDF keywords: git, changes, use, save, command.
+- User messages: 5 | AI messages: 5
+
+File: chat_two.txt
+Summary:
+- The conversation had 10 exchanges.
+- The user asked mainly about climate, change.
+- Most common keywords: climate, change, impacts, weather, main.
+- TF-IDF keywords: change, climate, address, welcome, impacts.
+- User messages: 5 | AI messages: 5
+```
+
 ## 🧠 Learning Notes
 
 As someone new to NLP and keyword extraction, implementing this feature was a learning milestone for me.
