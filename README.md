@@ -17,15 +17,47 @@ Basic NLP functionality has been added:
 - Uses `nltk` to extract the most common keywords in the conversation (excluding common stopwords)
 - Helps identify the main topic based on keyword frequency
 
-**Update 3**
+**Update 3:**
+Summarizer Function:
 The tool can now generate a summarized answer, ready to be provided to the user
 
-**Update 4**
+**Update 4:**
+TF-IDF Extraction:
 The tool summarizing ability has been improved by adding `TF-IDF` keyword extraction.
 
-🚧 Currently under development — more features coming soon.
+**Update 5:**
+Folder Based Extraction:
+The tool can now summarize and extract keywords from all `.txt` files in a folder
+
+## 🚀 Final Features
+
+- Parses `.txt` chat logs line-by-line
+- Differentiates User and AI messages
+- Counts total exchanges and speaker-specific messages
+- Extracts top keywords using:
+  - Basic frequency count (via NLTK)
+  - TF-IDF weighting (via `scikit-learn`)
+- Infers the main topic of discussion
+- Supports processing of:
+  - A single chat log file
+  - An entire folder of chat logs
 
 ---
+
+## How to run
+```bash
+pip install -r requirements.txt
+```
+
+If one file:
+```bash
+python summarizer.py chat_log.txt 
+```
+
+If entire folder:
+```bash
+python summarizer.py logs/
+```
 
 ## 🧠 Learning Notes
 
@@ -73,3 +105,14 @@ Here are some of the articles and videos that helped me understand and implement
 - Unlike simple frequency, TF-IDF gives more meaningful keywords and is especially useful in cases where basic counting gives too much weight to generic words like `python`.
 
 Implementing this felt like a big step forward in understanding how real-world NLP tools work!
+
+## 🪞 Reflection
+
+This was my first time building a full text processing pipeline using Python and NLP libraries. I started by writing basic parsing logic, then learned how to tokenize and filter text using NLTK. Adding TF-IDF was a challenge that pushed me to explore new tools like `scikit-learn`.
+
+If I were to do this again or on a larger scale, I would:
+- Organize the project using folders like `/data`, `/output`, and `/src`
+- Add unit tests and logging
+- Consider integrating a web interface for non-technical users
+
+This project helped me better understand natural language processing, data preprocessing, and Python tooling — and I’m excited to explore more!
