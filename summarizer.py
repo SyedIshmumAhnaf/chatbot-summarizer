@@ -1,5 +1,7 @@
 # AI Chat Log Summarizer
 # Started as part of a learning exercise to apply NLP and text analysis skills.
+import os
+
 from collections import Counter
 from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
@@ -92,10 +94,33 @@ def summarize(file_path):
 
     print(f"- User messages: {len(user_msgs)} | AI messages: {len(ai_msgs)}")
 
+#Summarize all .txt files in the given folder.
+def summarize_folder(folder_path):
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.txt'):
+            print(f"\n File: {filename}")
+            summarize(os.path.join(folder_path, filename))
+
+def main():
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: python summarizer.py <chat_log.txt OR folder_path>")
+        return
+    
+    input_path = sys.argv[1]
+    if os.path.isdir(input_path):
+        summarize_folder(input_path)
+    else:
+        summarize(input_path)
+
+if __name__ == "__main__":
+    main()
+
+'''
 if __name__ == "__main__":
     file_path = "chat_log.txt"
     summarize(file_path)
-
+'''
 '''
 #Tester function
 if __name__ == "__main__":

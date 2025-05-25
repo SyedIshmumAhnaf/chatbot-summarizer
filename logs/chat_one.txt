@@ -1,0 +1,10 @@
+User: What is Git?
+AI: Git is a distributed version control system that helps developers track changes in their code.
+User: Why should I use Git?
+AI: You should use Git to collaborate with others, keep a history of your project, and easily revert to previous versions if needed.
+User: What's a common Git command?
+AI: One common command is git clone to copy a repository.
+User: How do I save my changes?
+AI: You save changes using git add to stage them and git commit to record them.
+User: Got it!
+AI: Happy to help!

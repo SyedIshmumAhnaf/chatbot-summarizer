@@ -1,0 +1,10 @@
+User: What does "healthy eating" mean?
+AI: Healthy eating means consuming a balanced diet of nutrient-rich foods to fuel your body and maintain good health.
+User: What kind of foods should I focus on?
+AI: Focus on fruits, vegetables, whole grains, lean proteins, and healthy fats.
+User: Are there any foods I should limit?
+AI: Yes, it's generally good to limit highly processed foods, excessive sugars, and unhealthy fats.
+User: How much water should I drink daily?
+AI: Aim for around 8 glasses (about 2 liters) of water daily, though it can vary based on activity and climate.
+User: That's helpful!
+AI: Glad I could assist!

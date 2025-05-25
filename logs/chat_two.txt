@@ -1,0 +1,10 @@
+User: What is climate change?
+AI: Climate change refers to long-term shifts in temperatures and weather patterns, primarily caused by human activities.
+User: What are the main causes?
+AI: The burning of fossil fuels, deforestation, and industrial processes are major contributors.
+User: What are some impacts of climate change?
+AI: Impacts include rising sea levels, more extreme weather events, and disruptions to ecosystems.
+User: What can be done to address it?
+AI: Reducing greenhouse gas emissions, transitioning to renewable energy, and promoting sustainability are key actions.
+User: Thank you for the information.
+AI: You're welcome!
