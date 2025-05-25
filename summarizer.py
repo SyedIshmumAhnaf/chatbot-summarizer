@@ -51,6 +51,30 @@ def get_keywords(messages, top_n=5):
     freq = Counter(words)
     return freq.most_common(top_n)
 
+def infer_topic(keywords):
+    if not keywords:
+        return "No clear topic."
+    return f"The user asked mainly about {', '.join([kw for kw, _ in keywords[:2]])}."
+
+def summarize(file_path):
+    user_msgs, ai_msgs = parse_chat(file_path)
+    all_msgs = user_msgs + ai_msgs
+    total = len(all_msgs)
+    keywords = get_keywords(all_msgs)
+    topic = infer_topic(keywords)
+
+    print("Summary:")
+    print(f"- The conversation had {total} exchanges.")
+    print(f"- {topic}")
+    print(f"- Most common keywords: {', '.join([kw for kw, _ in keywords])}.")
+    print(f"- User messages: {len(user_msgs)} | AI messages: {len(ai_msgs)}")
+
+
+if __name__ == "__main__":
+    file_path = "chat_log.txt"
+    summarize(file_path)
+
+'''
 #Tester function
 if __name__ == "__main__":
     user, ai = parse_chat("chat_log.txt")
@@ -64,3 +88,4 @@ if __name__ == "__main__":
     print("\nTop Keywords (basic frequency):")
     for word, count in keywords:
         print(f"{word}: {count}")
+'''
