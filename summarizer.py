@@ -14,6 +14,11 @@ except LookupError:
     nltk.download('punkt')
     nltk.download('stopwords')
 
+try:
+    from sklearn.feature_extraction.text import TfidfVectorizer
+except ImportError:
+    TfidfVectorizer = None
+
 def parse_chat(file_path):
     #to store user and AI messages
     user_msgs = []
@@ -56,6 +61,18 @@ def infer_topic(keywords):
         return "No clear topic."
     return f"The user asked mainly about {', '.join([kw for kw, _ in keywords[:2]])}."
 
+def tfidf_keywords(messages, top_n=5):
+    if not TfidfVectorizer:
+        return []
+
+    vectorizer = TfidfVectorizer(stop_words='english')
+    X = vectorizer.fit_transform(messages)
+    scores = X.sum(axis=0).A1
+    terms = vectorizer.get_feature_names_out()
+
+    ranked = sorted(zip(terms, scores), key=lambda x: x[1], reverse=True)
+    return [term for term, _ in ranked[:top_n]]
+
 def summarize(file_path):
     user_msgs, ai_msgs = parse_chat(file_path)
     all_msgs = user_msgs + ai_msgs
@@ -67,8 +84,13 @@ def summarize(file_path):
     print(f"- The conversation had {total} exchanges.")
     print(f"- {topic}")
     print(f"- Most common keywords: {', '.join([kw for kw, _ in keywords])}.")
-    print(f"- User messages: {len(user_msgs)} | AI messages: {len(ai_msgs)}")
+    #print(f"- User messages: {len(user_msgs)} | AI messages: {len(ai_msgs)}")
 
+    if TfidfVectorizer:
+        tfidf = tfidf_keywords(all_msgs)
+        print(f"- TF-IDF keywords: {', '.join(tfidf)}.")
+
+    print(f"- User messages: {len(user_msgs)} | AI messages: {len(ai_msgs)}")
 
 if __name__ == "__main__":
     file_path = "chat_log.txt"
