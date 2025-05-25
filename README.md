@@ -19,15 +19,15 @@ Basic NLP functionality has been added:
 
 **Update 3:**
 Summarizer Function:
-The tool can now generate a summarized answer, ready to be provided to the user
+- The tool can now generate a summarized answer, ready to be provided to the user
 
 **Update 4:**
 TF-IDF Extraction:
-The tool summarizing ability has been improved by adding `TF-IDF` keyword extraction.
+- The tool summarizing ability has been improved by adding `TF-IDF` keyword extraction.
 
 **Update 5:**
 Folder Based Extraction:
-The tool can now summarize and extract keywords from all `.txt` files in a folder
+- The tool can now summarize and extract keywords from all `.txt` files in a folder
 
 ## 🚀 Final Features
 
@@ -41,8 +41,6 @@ The tool can now summarize and extract keywords from all `.txt` files in a folde
 - Supports processing of:
   - A single chat log file
   - An entire folder of chat logs
-
----
 
 ## How to run
 ```bash
